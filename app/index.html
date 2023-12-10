@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>To Do List In HTMX</title>
+    <link rel="stylesheet" href="./app/style.css" />
+  </head>
+  <body>
+    <script src="./app/htmx.min.js"></script>
+    <h1 class="test">HTMX Test</h1>
+    <button hx-get="/test" hx-trigger="click">Load Data</button>
+    <div hx-swap="outerHTML" hx-get="/test" hx-trigger="load"></div>
+  </body>
+</html>
