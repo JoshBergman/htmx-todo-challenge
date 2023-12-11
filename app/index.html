@@ -10,7 +10,9 @@
   <body>
     <script src="./app/htmx.min.js"></script>
     <h1 class="test">HTMX Test</h1>
-    <button hx-get="/test" hx-trigger="click">Load Data</button>
-    <div hx-swap="outerHTML" hx-get="/test" hx-trigger="load"></div>
+    <button hx-get="/api" hx-trigger="click">Load Data</button>
+    <div hx-swap="outerHTML" hx-get="/api" hx-trigger="load"></div>
+    <p id="test1">before</p>
+    <script src="./app/session.js" type="text/javascript""></script>
   </body>
 </html>
