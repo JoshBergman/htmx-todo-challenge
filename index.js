@@ -24,5 +24,4 @@ const utilRoutes = require("./src/routes/util-routes");
 app.use("/api", utilRoutes);
 
 const port = process.env.PORT || 3000;
-console.log(`Hosted on port: ${port}`);
 app.listen(port, () => {});
