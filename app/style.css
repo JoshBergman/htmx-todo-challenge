@@ -1,3 +1,22 @@
 .test {
   color: blue;
 }
+
+.tasks-containers {
+  /* Container that displays the tasks */
+  display: flex;
+  flex-direction: column;
+}
+
+.task-container {
+  /* Displays the contents of a task */
+  border: 2px solid gray;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.completed {
+  background-color: gray;
+}

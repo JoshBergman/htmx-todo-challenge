@@ -1,7 +1,6 @@
+let sessionID = localStorage.getItem("sessionID");
 document.addEventListener("DOMContentLoaded", () => {
-  let sessionID = localStorage.getItem("sessionID");
   if (!sessionID) {
-    // If the value is not present, get an id from the server
     fetch("/api/get-session")
       .then((response) => {
         if (!response.ok) {
@@ -11,15 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((data) => {
         const responseText = data.id;
-        localStorage.setItem("sessionID", responseText);
-        document.getElementById("test1").innerText = responseText + "";
 
+        localStorage.setItem("sessionID", responseText);
         sessionID = responseText;
       })
       .catch((error) => {
         console.error("Error fetching session id: ", error);
       });
-  } else {
-    document.getElementById("test1").innerText = String(sessionID);
   }
 });
+const idPayload = { id: sessionID };
+document
+  .getElementById("tasks")
+  .setAttribute("hx-vals", JSON.stringify(idPayload));

@@ -8,6 +8,7 @@ const app = express();
 app.use(helmet());
 app.use(express.static(__dirname));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: "*",

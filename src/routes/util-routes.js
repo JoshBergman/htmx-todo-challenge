@@ -1,12 +1,22 @@
 const express = require("express");
 const router = express.Router();
-const { testController } = require("../controllers/util/test-controller");
+
 const {
-  createSessionIDController,
-} = require("../controllers/util/make-sessionID-controller");
+  createSessionController,
+} = require("../controllers/util/make-session-controller");
 
-router.get("/", testController);
+const {
+  getTasksController,
+  checkTaskController,
+  deleteTaskController,
+} = require("../controllers/util/tasks");
 
-router.get("/get-session", createSessionIDController);
+router.get("/get-session", createSessionController);
+
+router.post("/get-tasks", getTasksController);
+
+router.post("/complete-task", checkTaskController);
+
+router.post("/delete-task", deleteTaskController);
 
 module.exports = router;
