@@ -8,22 +8,22 @@ module.exports.renderAddTask = (id) => {
          hx-include='[name="addinput"]'
          hx-vals='${JSON.stringify({ sessid: id })}'
          >
-            <input name="addinput" placeholder="Task Name" />
-            <button type="button" hx-target="#add" hx-swap="outerHTML" hx-post="/api/toggle-add" 
+            <input class="textInput" name="addinput" placeholder="Task Name" />
+            <button class="actionButton" type="submit">
+            Add Task
+            </button> 
+            <button class="actionButton" type="button" hx-target="#add" hx-swap="outerHTML" hx-post="/api/toggle-add" 
              hx-vals='${JSON.stringify({ sessid: id })}'
              >
                 Cancel
             </button>
-            <button type="submit">
-                Confirm
-            </button> 
         </form>
         `
       : `
-        <div id="add" hx-target="#tasks" hx-swap="innerHTML" hx-trigger="load" hx-post="/api/get-tasks" 
+        <div class="addTaskContainer" id="add" hx-target="#tasks" hx-swap="innerHTML" hx-trigger="load" hx-post="/api/get-tasks" 
          hx-vals='${JSON.stringify({ sessid: id })}'
          >
-            <button type="button" hx-target="#add" hx-swap="outerHTML" hx-post="/api/toggle-add" 
+            <button class="actionButton" type="button" hx-target="#add" hx-swap="outerHTML" hx-post="/api/toggle-add" 
             hx-vals='${JSON.stringify({ sessid: id })}'
             >
                 Add Task
