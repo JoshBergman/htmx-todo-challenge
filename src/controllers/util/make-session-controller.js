@@ -11,6 +11,8 @@ const getInitialTasksHTML = (id) => {
 
 module.exports.createSessionController = (req, res) => {
   const nextSessionID = Object.keys(sessions).length;
-  sessions[nextSessionID] = { tasks: { defaultTask: true } };
+  sessions[nextSessionID] = {
+    tasks: { defaultTask: { completed: true, isModifying: false } },
+  };
   res.send(getInitialTasksHTML(nextSessionID));
 };

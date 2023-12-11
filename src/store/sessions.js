@@ -2,8 +2,10 @@
 module.exports.sessions = {
   sessionID: {
     tasks: {
-      taskName: false, //taskName : completion status
-      isModifying: false,
+      taskName: {
+        isModifying: false,
+        completed: true,
+      },
     },
   },
   invalidID: {
