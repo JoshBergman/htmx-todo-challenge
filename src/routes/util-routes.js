@@ -13,6 +13,11 @@ const {
   toggleEditTaskController,
   confirmEditTaskController,
 } = require("../controllers/util/task-edit");
+const {
+  toggleAddTaskController,
+  getAddTaskController,
+  confirmAddTaskController,
+} = require("../controllers/util/add-task");
 
 router.get("/get-session", createSessionController);
 
@@ -25,5 +30,9 @@ router.post("/delete-task", deleteTaskController);
 router.post("/toggle-edit", toggleEditTaskController);
 
 router.post("/confirm-edit", confirmEditTaskController);
+
+router.post("/toggle-add", toggleAddTaskController);
+
+router.post("/confirm-add", confirmAddTaskController);
 
 module.exports = router;

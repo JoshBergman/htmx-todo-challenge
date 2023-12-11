@@ -7,11 +7,12 @@ module.exports.sessions = {
         completed: true,
       },
     },
+    isAdding: false,
   },
   invalidID: {
     tasks: {
       id_is_invalid: true,
-      clear_local_storage_to_fix_id: false,
     },
+    isAdding: false,
   },
 };
